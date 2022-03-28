@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "build": "cd front && npm run build",
+        "build": "export NODE_OPTIONS=--openssl-legacy-provider; cd front && npm run build",
         "install-client": "cd front && npm install",
         "heroku-postbuild": "npm run install-client && npm run build",
         "server": "cd api && npm run start",
