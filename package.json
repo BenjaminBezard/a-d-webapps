@@ -2,8 +2,11 @@
     "name": "a-d-webapp",
     "version": "1.0.0",
     "description": "",
+    "engines" : { 
+        "node" : "=16.0.0"
+    },
     "scripts": {
-        "build": "export NODE_OPTIONS=--openssl-legacy-provider; cd front && npm run build",
+        "build": "cd front && npm run build",
         "install-client": "cd front && npm install",
         "heroku-postbuild": "npm run install-client && npm run build",
         "server": "cd api && npm run start",
