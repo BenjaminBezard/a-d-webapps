@@ -6,12 +6,12 @@
         "node": "=16.2.0"
     },
     "scripts": {
-        "build": "cd front && npm run build",
-        "install-client": "cd front && npm install",
+        "build": "cd api/front && npm run build",
+        "install-client": "cd api/front && npm install",
         "heroku-postbuild": "npm run install-client && npm run build",
         "server": "cd api && npm run start",
-        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix front\"",
-        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix front\""
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix api/front\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix api/front\""
     },
     "keywords": [],
     "author": "ImBen",
