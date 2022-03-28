@@ -74,7 +74,7 @@ app.get("/", function (request, response) {
 
 // set port, listen for requests
 // const PORT = process.env.NODE_DOCKER_PORT || process.env.PORT || 8080;
-const PORT = process.env.PORT || 8080;
+const PORT = 8080 || process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
