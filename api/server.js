@@ -57,9 +57,9 @@ function initial() {
 }
 
 // simple route
-app.get("/", (req, res) => {
-    res.json({ message: "Hello world!" });
-});
+// app.get("/", (req, res) => {
+//     res.json({ message: "Hello world!" });
+// });
 
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
@@ -68,9 +68,9 @@ const path = require("path");
 
 app.use(express.static(path.resolve(__dirname, "../front/build")));
 
-// app.get("/", function (request, response) {
-//     response.sendFile(path.resolve(__dirname, "../front/build", "index.html"));
-// });
+app.get("/", function (request, response) {
+    response.sendFile(path.resolve(__dirname, "../front/build", "index.html"));
+});
 
 // set port, listen for requests
 // const PORT = process.env.NODE_DOCKER_PORT || process.env.PORT || 8080;
