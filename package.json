@@ -2,8 +2,8 @@
     "name": "a-d-webapp",
     "version": "1.0.0",
     "description": "",
-    "engines" : { 
-        "node" : "=16.0.0"
+    "engines": {
+        "node": ">=16.0.0"
     },
     "scripts": {
         "build": "cd front && npm run build",
@@ -15,5 +15,8 @@
     },
     "keywords": [],
     "author": "ImBen",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^7.0.0"
+    }
 }
