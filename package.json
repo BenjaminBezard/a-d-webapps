@@ -2,9 +2,6 @@
     "name": "a-d-webapp",
     "version": "1.0.0",
     "description": "",
-    "engines": {
-        "node": ">=16.0.0"
-    },
     "scripts": {
         "build": "cd front && npm run build",
         "install-client": "cd front && npm install",
