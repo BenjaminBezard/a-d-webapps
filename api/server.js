@@ -68,7 +68,7 @@ const path = require("path");
 
 app.use(express.static(path.resolve(__dirname, "../front/build")));
 
-app.get("*", function (request, response) {
+app.get("/", function (request, response) {
     response.sendFile(path.resolve(__dirname, "../front/build", "index.html"));
 });
 
