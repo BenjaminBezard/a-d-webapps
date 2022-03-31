@@ -1,25 +1,18 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-
+const path = require("path");
 const app = express();
-
 var corsOptions = {
   origin: process.env.CLIENT_ORIGIN || "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
-
-// parse requests of content-type - application/json
 app.use(express.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
 const Role = require("./app/models/role.model");
-
-console.log(db.url);
 
 db.mongoose
   .connect(db.url, {
@@ -57,15 +50,13 @@ function initial() {
   });
 }
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Hello world!" });
-});
+app.get("/", (req, res) => { res.json({ message: "Hello world!" }); });
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
+require('./app/routes/file.routes')(app);
 
-// set port, listen for requests
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
