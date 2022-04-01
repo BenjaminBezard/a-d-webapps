@@ -50,8 +50,7 @@ function initial() {
     });
 }
 
-app.get("/", (req, res) => { res.json({ message: "Hello world!" }); });
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// app.get("/", (req, res) => { res.json({ message: "Hello world!" }); });
 
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
@@ -60,6 +59,7 @@ require('./app/routes/file.routes')(app);
 const path = require("path");
 
 app.use(express.static(path.resolve(__dirname, "../front/build")));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.get("/", function (request, response) {
     response.sendFile(path.resolve(__dirname, "../front/build", "index.html"));
