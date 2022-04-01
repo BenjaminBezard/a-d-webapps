@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
-const Role = require("./app/models/role.model");
+const Role = db.role;
 
 db.mongoose
     .connect(db.url, {
@@ -21,6 +21,7 @@ db.mongoose
     })
     .then(() => {
         console.log("Connected to the database!");
+        initial();
     })
     .catch(err => {
         console.log("Cannot connect to the database!", err);
@@ -55,8 +56,6 @@ function initial() {
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
 require('./app/routes/file.routes')(app);
-
-const path = require("path");
 
 app.use(express.static(path.resolve(__dirname, "../front/build")));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const db = {};
 
 mongoose.Promise = global.Promise;
-db.mongoose = mongoose
+db.mongoose = mongoose;
 db.user = require("./user.model");
 db.role = require("./role.model");
 db.file = require("./file.model");
