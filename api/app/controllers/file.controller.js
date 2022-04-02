@@ -42,29 +42,6 @@ exports.uploadFile = (req, res) => {
     }
 };
 
-// exports.uploadFile = (req, res) => {
-//     try {
-//         console.log("Request ---", req);
-//         console.log("Request file ---", req.file);//Here you get file.
-//         const file = new File();
-//         // file.name = req.file.name;
-//         file.meta_data = req.file;
-//         file.save().then(() => {
-//             res.status(200).send({
-//                 message: "uploaded successfully",
-//                 success: true
-//             })
-//         })
-//         /*Now do where ever you want to do*/
-//     } catch (err) {
-//         console.log("UPLOAD ERR:", err);
-//         res.status(500).send({
-//             message: "uploaded wrongfully",
-//             success: false
-//         });
-//     }
-// };
-
 exports.getAllFile = async (req, res) => {
     try {
         console.log("get all file");

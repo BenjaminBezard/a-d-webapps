@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
+import Upload from './components/upload.component';
 
 function App() {
   return (<Router>
@@ -19,6 +20,9 @@ function App() {
               <li className="nav-item">
                 <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/upload"}>Upload</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -30,6 +34,7 @@ function App() {
             <Route exact path='/' component={Login} />
             <Route path="/sign-in" component={Login} />
             <Route path="/sign-up" component={SignUp} />
+            <Route path="/upload" component={Upload} />
           </Switch>
         </div>
       </div>
