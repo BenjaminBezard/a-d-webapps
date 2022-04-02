@@ -14,7 +14,7 @@ module.exports = function(app) {
     // app.get("/file/all", [authJwt.verifyToken, upload.single("myFile")], controller.getAllFile);
     app.get("/file/all", /*[authJwt.verifyToken],*/ controller.getAllFile);
 
-    app.get("file/search", [authJwt.verifyToken], controller.getSearchFile);
+    app.get("/file/search", [authJwt.verifyToken], controller.getSearchFile);
 
     app.post("/file/upload", /*[authJwt.verifyToken/*, upload.single("myImage")],*/ controller.uploadFile);
 };
